@@ -1,8 +1,9 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-#include <bits/stdc++.h>
+#include "MatrixCell.h"
 using namespace std;
+
 
 class Grafo{
 	public:
@@ -10,10 +11,13 @@ class Grafo{
 	~Grafo();
 	void connect(int s1, int s2);
 	void disconnect(int s1, int s2);
+	void setInitialState(int s1, int s2);
+	void setFinalState(int s1, int s2);
 	void printMatrix();
-	int returnnumVert();
+	int returnNAB();
+	int returnNstates();
 	private:
-	int **M;
+	MatrixCell **M;
 	int numStates;
 	int numAlphaB;
 };
